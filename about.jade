@@ -1,0 +1,14 @@
+extends base.jade
+
+if request.path.startswith('/about')
+	post = d.get_doc(path='/about.md')
+
+block content
+	.autopagerize_page_element:.content
+		.post.animated.fadeInDown
+
+			.post_content.markdown= post.content
+			
+
+
+	+h.back_to_top()
